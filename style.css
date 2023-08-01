@@ -23,12 +23,13 @@ html , body{
 }
 
 .blurCursor {
-    height: 400px;
-    width: 400px;
-    background-color: whitesmoke;
+    height: 500px;
+    width: 500px;
+    background-color: rgba(116, 169, 37, 0.25);
     border-radius: 50%;
     position: fixed;
     z-index: 9;
+    filter: blur(100px);
 }
 
 .nav{
@@ -46,6 +47,10 @@ html , body{
 
 .nav img{
     height: 75px;
+}
+
+.nav h4{
+    font-weight: 500;
 }
 
 video{
@@ -66,6 +71,7 @@ video{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    z-index: 10;
 }
 
 .page1 h1{
@@ -101,4 +107,5 @@ video{
 .page2{
     height: 100vh;
     width: 100%;
+    z-index: 10;
 }
