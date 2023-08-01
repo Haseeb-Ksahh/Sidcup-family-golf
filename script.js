@@ -2,16 +2,11 @@ const cursor = document.querySelector(".cursor")
 const blurCursor = document.querySelector(".blurCursor")
 
 document.addEventListener("mousemove", dits => {
-    setTimeout(() => {
+
         cursor.style.left = dits.x - 12.5 + "px"
         cursor.style.top = dits.y - 12.5 + "px"
-    }, 150);
-
-    setTimeout(() => {
         blurCursor.style.left = dits.x - 250 + "px"
         blurCursor.style.top = dits.y - 250 + "px"
-        blurCursor.style.opacity = 1;
-    }, 300);
 })
 
 

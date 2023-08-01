@@ -20,16 +20,18 @@ html , body{
     border-radius: 50%;
     position: fixed;
     z-index: 99;
+    transition: all linear 0.1s;
 }
 
 .blurCursor {
     height: 500px;
     width: 500px;
-    background-color: rgba(116, 169, 37, 0.25);
+    background-color: rgba(150, 193, 30, 0.3);
     border-radius: 50%;
     position: fixed;
+    filter: blur(80px);
     z-index: 9;
-    filter: blur(100px);
+    transition: all linear 0.4s;
 }
 
 .nav{
@@ -43,17 +45,19 @@ html , body{
     gap: 45px;
     position: fixed;
     z-index: 99;
+
+    & img{
+        height: 75px;
+    }
+    & h4{
+        font-weight: 500;
+    }
 }
 
-.nav img{
-    height: 75px;
-}
-
-.nav h4{
-    font-weight: 500;
-}
 
 video{
+    height: 100%;
+    width: 100%;
     object-fit: cover;
     position: fixed;
     z-index: -1;
@@ -72,40 +76,84 @@ video{
     justify-content: center;
     flex-direction: column;
     z-index: 10;
-}
 
-.page1 h1{
-    font-size: 115px;
-    font-weight: 900;
-    position: relative;
-}
+    & h1{
+        font-size: 115px;
+        font-weight: 900;
+        position: relative;
+    }
 
-.page1 h1::before{
-    content: "EAT. DRINK. PLAY.";
-    position: absolute;
-    top: -6px;
-    left: -6px;
-    color: black;
-    -webkit-text-stroke: 3px #95c11e;
-    z-index: -1;
-}
+    & h1::before{
+        content: "EAT. DRINK. PLAY.";
+        position: absolute;
+        top: -6px;
+        left: -6px;
+        color: black;
+        -webkit-text-stroke: 3px #95c11e;
+        z-index: -1;
+    }
+    & h2{
+        font-size: 30px;
+        font-weight: 800;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    & p{
+        font-size: 22px;
+        font-weight: 500;
+        width: 46%;
+        text-align: center;
+        line-height: 1.5;
+    }
 
-.page1 h2{
-    font-size: 30px;
-    font-weight: 800;
-    margin-top: 10px;
-    margin-bottom: 15px;
-}
-.page1 p{
-    font-size: 22px;
-    font-weight: 500;
-    width: 46%;
-    text-align: center;
-    line-height: 1.5;
 }
 
 .page2{
     height: 100vh;
     width: 100%;
     z-index: 10;
+}
+
+.scroller {
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+
+    & h4 {
+        display: inline-block;
+        font-size: 120px;
+        font-weight: 900;
+        margin-right: 50px;
+        -webkit-text-stroke: 1px white;
+        color : black;
+        transition: all linear 0.5s;
+        
+    }
+    & h4:hover{
+        color: #95c11e;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    & .scroller-in {
+        display: inline-block; 
+        animation-name: scroll;
+        animation-duration: 30s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+}
+
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+
+    to{
+        transform: translateX(-100%);
+    }
 }
