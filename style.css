@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
 @font-face {
     font-family: gilroy;
@@ -23,14 +23,18 @@ body {
     height: 100%;
 }
 
+.imgHover {
+    transition : all ease 0.2s
+}
+
 .cursor {
     height: 25px;
     width: 25px;
-    background-color: #95c11e;
+    background-color: #b3e824;
     border-radius: 50%;
     position: fixed;
     z-index: 99;
-    transition: all linear 0.1s;
+    transition: all linear 0.2s;
 }
 
 .blurCursor {
@@ -344,6 +348,7 @@ video {
     gap: 35px;
     position: relative;
     z-index: 10;
+    margin-bottom: 100px;
 
     & h1 {
         font-size: 104px;
@@ -395,4 +400,51 @@ video {
             scale: 1;
         }
     }
+}
+
+.footer {
+    height: 55vh;
+    width: 100%;
+    background: linear-gradient(to left bottom, #039c3d 0%, #b3e824 50%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 150px;
+    padding: 0 100px;
+    
+    &>img {
+        position: absolute;
+        left: 0;
+        height: 100%;
+        z-index: 0;
+    }
+
+    & h3 {
+        font-size: 30px;
+        color : black;
+        font-weight: 900;
+        line-height: 50px;
+    }
+    
+    & p {
+        color : black;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+
+        & .hovercolor {
+            color : black
+        }
+    }
+    
+    & .f1 img {
+        height: 120px;
+    }
+    
+    & .f1, .f2, .f3, .f4 {
+        width: fit-content;
+        z-index: 99;
+    }
+
 }

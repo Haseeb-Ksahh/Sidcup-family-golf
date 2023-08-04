@@ -8,11 +8,11 @@ document.addEventListener("mousemove", dits => {
     blurCursor.style.top = dits.y - 250 + "px"
 })
 
-const allh4 = document.querySelectorAll(".cursorhover")
+const crsrhover = document.querySelectorAll(".cursorhover")
 
-allh4.forEach(element => {
+crsrhover.forEach(element => {
     element.addEventListener("mouseenter", function () {
-        cursor.style.scale = 3
+        cursor.style.scale = 3.5
         cursor.style.border = "1px solid #fff"
         cursor.style.backgroundColor = "transparent"
     })
@@ -23,13 +23,34 @@ allh4.forEach(element => {
     })
 })
 
+const h3Element = document.querySelectorAll(".footer h3 , .hoverColor")
+
+h3Element.forEach( element => {
+    element.addEventListener("mouseenter" , function(){
+        element.style.color = "white"
+    })
+    element.addEventListener("mouseleave" , function(){
+        element.style.color = "black"
+    })
+})
+
+const imgHover = document.querySelectorAll(".imgHover")
+
+imgHover.forEach( element => {
+    element.addEventListener("mouseenter" , function(){
+        element.style.scale = 0.9
+    })
+    element.addEventListener("mouseleave" , function(){
+        element.style.scale = 1
+    })
+})
+
 gsap.to(".nav", {
     backgroundColor: "#000",
     duration: 0.5,
     height: "110px",
     scrollTrigger: {
         trigger: ".nav",
-        markers: true,
         start: "top -10%",
         end: "top -11%",
         scrub: 1
@@ -40,7 +61,6 @@ gsap.to(".main", {
     backgroundColor: "#000",
     scrollTrigger: {
         trigger: "main",
-        markers: true,
         start: "top -25%",
         end: "top -75%",
         scrub: 1
@@ -73,9 +93,8 @@ gsap.to(".page4 h1" , {
     y : -50,
     scrollTrigger : {
         trigger : ".page4 h1",
-        markers : true,
         start : "top 75%",
-        end : "top 70%",
-        scrub : 4
+        end : "top 40%",
+        scrub : 3
     }
 })
