@@ -52,7 +52,6 @@ gsap.to("#colon1" , {
     y : 55,
     scrollTrigger : {
         trigger : "#colon1",
-        markers : true,
         start : "top 70%",
         end : "top 45%",
         scrub : 3
@@ -64,9 +63,19 @@ gsap.to("#colon2" , {
     y : -55,
     scrollTrigger : {
         trigger : "#colon1",
-        markers : true,
         start : "top 70%",
         end : "top 45%",
         scrub : 3
+    }
+})
+
+gsap.to(".page4 h1" , {
+    y : -50,
+    scrollTrigger : {
+        trigger : ".page4 h1",
+        markers : true,
+        start : "top 75%",
+        end : "top 70%",
+        scrub : 4
     }
 })
