@@ -4,14 +4,17 @@ const crsrhover = document.querySelectorAll(".cursorhover")
 
 window.addEventListener("mousemove", e => {
     
-    const positionX = e.clientX;
-    const positionY = e.clientY;
+    const positionX = e.clientX - cursor.offsetWidth / 2;
+    const positionY = e.clientY - cursor.offsetHeight / 2;
 
-    cursor.style.left = `${positionX - 12.5}px`;
-    cursor.style.top = `${positionY - 12.5}px`;
+    cursor.style.left = `${positionX}px`;
+    cursor.style.top = `${positionY}px`;
 
-    blurCursor.style.left = `${positionX -250}px`;
-    blurCursor.style.top = `${positionY -250}px`;
+    const bcpositionX = e.clientX - blurCursor.offsetWidth / 2;
+    const bcpositionY = e.clientY - blurCursor.offsetHeight / 2;
+
+    blurCursor.style.left = `${bcpositionX}px`;
+    blurCursor.style.top = `${bcpositionY}px`;
 
 })
 
