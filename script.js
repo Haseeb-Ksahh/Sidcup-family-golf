@@ -1,25 +1,26 @@
-const cursor = document.querySelector(".cursor")
-const blurCursor = document.querySelector(".blurCursor")
-
-document.addEventListener("mousemove", dits => {
-    cursor.style.left = dits.x - 12.5 + "px"
-    cursor.style.top = dits.y - 12.5 + "px"
-    blurCursor.style.left = dits.x - 250 + "px"
-    blurCursor.style.top = dits.y - 250 + "px"
-})
-
+const cursor = document.querySelector("[data-cursor-dot]");
+const blurCursor = document.querySelector("[data-blur-cursor]");
 const crsrhover = document.querySelectorAll(".cursorhover")
+
+window.addEventListener("mousemove", e => {
+    
+    const positionX = e.clientX;
+    const positionY = e.clientY;
+
+    cursor.style.left = `${positionX - 12.5}px`;
+    cursor.style.top = `${positionY - 12.5}px`;
+
+    blurCursor.style.left = `${positionX -250}px`;
+    blurCursor.style.top = `${positionY -250}px`;
+
+})
 
 crsrhover.forEach(element => {
     element.addEventListener("mouseenter", function () {
-        cursor.style.scale = 3.5
-        cursor.style.border = "1px solid #fff"
-        cursor.style.backgroundColor = "transparent"
+        cursor.style.cssText = "transform : scale(3.5); border : 1px solid white; background-color : transparent;"
     })
     element.addEventListener("mouseleave", function () {
-        cursor.style.scale = 1
-        cursor.style.border = "0px solid #fff"
-        cursor.style.backgroundColor = "#95C11E"
+        cursor.style.cssText = "transform : scale(1); border : 0px solid white; background-color : #95C11E;"
     })
 })
 
